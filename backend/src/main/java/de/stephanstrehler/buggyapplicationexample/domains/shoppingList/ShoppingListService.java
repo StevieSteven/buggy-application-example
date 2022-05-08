@@ -29,11 +29,11 @@ public class ShoppingListService {
 
     public ShoppingList addList(String name) throws InputValidationException {
         if (name.isBlank()) {
-            throw new InputValidationException("name must not be empty");
+            throw new InputValidationException("Name muss angegeben werden");
         }
 
         if (shoppingListRepository.existsByName(name.trim())) {
-            throw new InputValidationException("list with name still exists");
+            throw new InputValidationException("Liste mit diesem Namen existiert bereits");
         }
         return shoppingListRepository.save(new ShoppingList(
                 UUID.randomUUID(),
@@ -60,7 +60,7 @@ public class ShoppingListService {
         var list = optionalList.get();
 
         if (shoppingListItemRepository.existsByName(name.trim())) {
-            throw new InputValidationException("list with name still exists");
+            throw new InputValidationException("Eintrag mit diesem Namen existiert bereits");
         }
 
         var newItem = new ShoppingListItem(

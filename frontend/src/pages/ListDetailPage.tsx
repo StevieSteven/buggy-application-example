@@ -73,7 +73,7 @@ const ItemList = (props: { id: string }) => {
 
 const AddListItem = (props: { id: string }) => {
     const [name, setName] = useState<string>("");
-    const [amount, setAmount] = useState<number>(0);
+    const [amount, setAmount] = useState<number>(1);
 
     const mutation = useAddListItemMutation(props.id);
     const onClick = () => {

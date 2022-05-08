@@ -19,6 +19,9 @@ dependencies {
 
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mockito:mockito-core:4.5.1'
+	// for mockito:
+	implementation 'net.bytebuddy:byte-buddy:1.12.10'
 
 }
 
